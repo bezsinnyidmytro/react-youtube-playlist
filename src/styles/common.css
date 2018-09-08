@@ -1,0 +1,13 @@
+.content-container {
+    width: calc(100% - 100px);
+    margin: 0 auto;
+    max-width: 1360px;
+    padding: 50px;
+    min-height: 80vh;
+    background-color: pink;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}

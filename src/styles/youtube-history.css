@@ -1,0 +1,15 @@
+.history-list {
+    background-color: white;
+    min-height: 100px;
+    max-height: 60vh;
+    overflow: auto;
+}
+.history-list__item {
+    padding: 5px;
+    cursor: pointer;
+    background-color: #9dd260;
+    margin-bottom: 5px;
+}
+.history-list__item:last-of-type {
+    margin-bottom: 0px;
+}
