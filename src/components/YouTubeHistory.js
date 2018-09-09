@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import '../styles/youtube-history.css';
 
 export const YouTubeHistory = (props) => {
+    console.log(props);
     const items = props.historyItems.map((item, idx) => {
         return (
             <div key={item.title} className={'history-list__item-wrap'}>

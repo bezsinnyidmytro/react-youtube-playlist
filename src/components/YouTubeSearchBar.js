@@ -87,6 +87,7 @@ export class YouTubeSearchBar extends React.PureComponent {
 
         localStorage.setItem('searchQuery', query);
         this.props.setSearchResult(newItems, res.data.nextPageToken, query);
+        this.searchResultRef.current.hidden = false;
     }
 
     runSearch(query, pageToken = '') {
@@ -118,7 +119,7 @@ export class YouTubeSearchBar extends React.PureComponent {
         if (this.searchTimeout) {
             clearTimeout(this.searchTimeout);
         }
-        this.searchTimeout = setTimeout(this.runSearch(query), 2000);
+        this.searchTimeout = setTimeout(this.runSearch(query), 1200);
     }
 
     render() {
@@ -144,7 +145,9 @@ export class YouTubeSearchBar extends React.PureComponent {
                     placeholder={'Search on YouTube...'}
                     onChange={this.handleSearchChange}
                     onFocus={() => {
-                        searchResultRef.current.hidden = false;
+                        if (searchItems && searchItems.length) {
+                            searchResultRef.current.hidden = false;
+                        }
                     }}
                 />
                 <div hidden={true} ref={searchResultRef} className={'yt-search__results'}>

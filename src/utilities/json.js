@@ -2,7 +2,7 @@ const safeJsonParse = (data, defReturn = []) => {
     try {
         const parsedData = JSON.parse(data);
 
-        if (parsedData instanceof Array && !parsedData.length) {
+        if (!parsedData || !parsedData.length) {
             return (defReturn);
         }
         return (parsedData);
