@@ -9,7 +9,7 @@ export const YouTubeHistory = (props) => {
             <div key={item.title} className={'history-list__item-wrap'}>
                 <div
                     className={'history-list__item'}
-                    onClick={() => props.onItemClick({ videoId: item.videoId, title: item.title })}
+                    onClick={() => props.onItemClick(item.videoId)}
                 >{item.title}</div>
                 <div className={'history-list__remove-item'}>
                     <div

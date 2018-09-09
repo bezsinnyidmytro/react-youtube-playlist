@@ -78,7 +78,7 @@ class MainPage extends React.PureComponent {
                 <div id={'main-page__history-wrap'}>
                     <YouTubeHistory
                         historyItems={history}
-                        onItemClick={this.selectAndAddToHistory}
+                        onItemClick={this.selectVideoItem}
                         onRemoveItemClick={removeHistoryItem}
                     />
                 </div>
