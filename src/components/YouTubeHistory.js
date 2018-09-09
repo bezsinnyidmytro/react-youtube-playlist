@@ -6,11 +6,20 @@ import '../styles/youtube-history.css';
 export const YouTubeHistory = (props) => {
     const items = props.historyItems.map((item, idx) => {
         return (
-            <div
-                key={item.title}
-                className={'history-list__item'}
-                onClick={() => props.onItemClick(item.title)}
-            >{item.title}</div>
+            <div key={item.title} className={'history-list__item-wrap'}>
+                <div
+                    className={'history-list__item'}
+                    onClick={() => props.onItemClick({ videoId: item.videoId, title: item.title })}
+                >{item.title}</div>
+                <div className={'history-list__remove-item'}>
+                    <div
+                        className={'history-list__remove-button'}
+                        onClick={() => props.onRemoveItemClick(item.videoId)}
+                    >
+                        <span role={'img'} aria-label={'remove'}>&#10060;</span>
+                    </div>
+                </div>
+            </div>
         );
     });
 
@@ -27,13 +36,10 @@ export const YouTubeHistory = (props) => {
 YouTubeHistory.propTypes = {
     historyItems: PropTypes.array,
     onItemClick: PropTypes.func,
+    onRemoveItemClick: PropTypes.func,
 };
 YouTubeHistory.defaultProps = {
-    historyItems: [
-        { title: 'MDE_9vm4pRI' },
-        { title: 'WOs84XQ0xT0' },
-        { title: 'ShqrpeAWxFc' },
-        { title: '2ipjIRimc2w' },
-    ],
+    historyItems: [],
     onItemClick: () => {},
+    onRemoveItemClick: () => {}
 };

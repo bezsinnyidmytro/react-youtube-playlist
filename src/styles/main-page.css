@@ -1,10 +1,7 @@
 #main-page__history-wrap {
-    background-color: aquamarine;
     flex: 1;
-    height: 200px;
 }
 #main-page__player-wrap {
-    background-color: antiquewhite;
     flex: 3;
     height: 200px;
     margin-left: 30px;

@@ -4,10 +4,22 @@
     max-width: 1360px;
     padding: 50px;
     min-height: 80vh;
-    background-color: pink;
+    min-width: calc(950px - 100px);
+    background-color: burlywood;
 }
-
 .flex-row {
     display: flex;
     flex-direction: row;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

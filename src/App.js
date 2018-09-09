@@ -1,11 +1,24 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+
 import './App.css';
-import { MainPage } from "./pages/MainPage";
+import MainPage from "./pages/MainPage";
+import store from "./store";
 
 class App extends Component {
-  render() {
-      return (<MainPage/>);
-  }
+    componentDidMount() {
+        console.log(store.getState());
+        this.unsubscribe = store.subscribe(() => {
+            console.log(store.getState());
+        });
+    }
+
+    componentWillUnmount() {
+        this.unsubscribe();
+    }
+
+    render() {
+        return (<MainPage/>);
+    }
 }
 
 export default App;
